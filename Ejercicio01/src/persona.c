@@ -6,19 +6,24 @@
  */
 #include "persona.h"
 #include <stdio.h>
+#include <string.h>
 
 void pedirPersona(persona * p){
 	puts("Introduce Nombre:");
 	fflush(stdout);
-	scanf("%s", p->nombre);
+	//scanf("%s", p->nombre);
+	fgets(p->nombre,MAXNOMBRE, stdin);
+	p->nombre[strlen(p->nombre)-1]='\0';
 
-	puts("Introduce Apellidos: ");
+	puts("Introduce Apellidos:");
 	fflush(stdout);
-	scanf("%s", p->apellidos);
+	//scanf("%s", p->nombre);
+	fgets(p->apellidos,MAXAPELLIDOS, stdin);
+	p->apellidos[strlen(p->apellidos)-1]='\0';
 
 	puts("Introduce edad: ");
 	fflush(stdout);
-	scanf("%d", &p->edad);
+	scanf("%d", &(p->edad));
 }
 
 void mostrarPersona(persona p){
