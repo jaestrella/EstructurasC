@@ -10,11 +10,11 @@
 void pedirFraccion(fraccion * f){
 	puts("Introduce numerador:");
 	fflush(stdout);
-	scanf("%d", &f->numerador);
+	scanf("%d", &(f->numerador));
 
 	puts("Introduce denominador: ");
 	fflush(stdout);
-	scanf("%d", &f->denominador);
+	scanf("%d", &(f->denominador));
 }
 
 void mostrarFraccion(fraccion f){

@@ -10,19 +10,44 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include "listaPacientes.h"
 #include "imc.h"
 int main(void) {
-	paciente p1,p2;
+	int opcion;
+	paciente lista[MAXPACIENTES];
+	paciente p;
+	char nombre[MAXNOMBRE];
+	int num=0;
+	do{
+		puts("Programa de gestión de la clínica.");
 
-	pedirPaciente(&p1);
-	mostrarPaciente(p1);
-	puts("");
-	printf("IMC=%.2f",imc(p1));
+		puts("1. Contar pacientes.");
+		puts("2. Mostrar pacientes.");
+		puts("3. Añadir paciente. ");
+		puts("4. Buscar paciente. ");
+		puts("5. Calcular IMC paciente. ");
+		puts("0. Salir.");
 
-	puts("");
+		puts("Introduce opcion 0-5:");
+		fflush(stdout);
+		scanf("%d",&opcion);
 
-	pedirPaciente(&p2);
-	mostrarPaciente(p2);
-	puts("");
-	printf("IMC=%.2f",imc(p2));
+		switch(opcion){
+		case 1:
+			printf("\n En la lista hay ahora mismo %d pacientes\n",num);
+			break;
+
+		case 2:
+			printf("\nListado de pacientes:\n");
+			mostrarListaPaciente(lista,num);
+			break;
+
+		case 3:
+			puts("Alta de paciente.");
+			puts("Introduce al paciente");
+			p=Paciente();
+			num=insertarPaciente(lista,num,p);
+			break;
+		}
+	}while(opcion!=0);
 }

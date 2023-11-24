@@ -6,20 +6,26 @@
  */
 #include "imc.h"
 #include <stdio.h>
-
-void pedirPaciente(paciente * p){
+#include <string.h>
+paciente Paciente(void){
+	paciente p;
 	puts("Introduce nombre:");
+	fflush(stdin);
 	fflush(stdout);
-	scanf("%s", p->nombre);
+	fgets(p.nombre,MAXNOMBRE, stdin);
+	p.nombre[strlen(p.nombre)-1]='\0';
 
 	puts("Introduce el peso en kg: ");
+	fflush(stdin);
 	fflush(stdout);
-	scanf("%f", &p->peso);
+	scanf("%f",&p.peso);
 
 	puts("Introduce la altura: ");
 	fflush(stdin);
 	fflush(stdout);
-	scanf("%f", &p->altura);
+	scanf("%f",&p.altura);
+
+	return p;
 }
 
 void mostrarPaciente(paciente p){

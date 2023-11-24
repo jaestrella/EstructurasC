@@ -15,7 +15,8 @@ typedef struct{
 	float altura;
 }paciente;
 
-void pedirPaciente(paciente * p);
+
+paciente Paciente(void);
 void mostrarPaciente(paciente p);
 float imc(paciente p);
 
