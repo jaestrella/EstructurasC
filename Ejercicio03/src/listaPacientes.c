@@ -35,3 +35,20 @@ void mostrarListaPaciente(paciente lista[MAXPACIENTES],int tam){
 		mostrarPaciente(lista[i]);
 	}
 }
+
+int borrarPaciente(paciente lista[MAXPACIENTES],int tam,char nombre[MAXNOMBRE]){
+	int i;
+	int encontrado=MAXPACIENTES;
+	for(i=0;i<tam;i++){
+		if(strcmp(nombre,lista[i].nombre)==0){
+			encontrado=i;
+		}
+	}
+	if(encontrado!=MAXPACIENTES){
+		for(i=encontrado;i<tam-1;i++){
+			lista[i]=lista[i+1];
+		}
+		tam--;
+	}
+	return tam;
+}

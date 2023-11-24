@@ -16,4 +16,6 @@ int buscarPaciente(paciente lista[MAXPACIENTES], int tam, char nombre[MAXNOMBRE]
 
 void mostrarListaPaciente(paciente lista[MAXPACIENTES],int tam);
 
+int borrarPaciente(paciente lista[MAXPACIENTES],int tam,char nombre[MAXNOMBRE]);
+
 #endif /* LISTAPACIENTES_H_ */

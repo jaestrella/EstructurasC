@@ -29,7 +29,7 @@ paciente Paciente(void){
 }
 
 void mostrarPaciente(paciente p){
-	printf("%s, %.2f, %.2f",p.nombre,p.peso,p.altura);
+	printf("%s, %.2f, %.2f\n",p.nombre,p.peso,p.altura);
 }
 
 float imc(paciente p){
