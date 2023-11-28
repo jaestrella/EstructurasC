@@ -8,7 +8,7 @@
 #ifndef CUMPLE_H_
 #define CUMPLE_H_
 #define MAXNOMBRE 30
-#define MAXPERSONAS 3
+#define MAXPERSONAS 8
 typedef struct{
 	char nombre[MAXNOMBRE];
 	int diaCumple;
