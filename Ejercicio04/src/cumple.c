@@ -49,9 +49,6 @@ void buscarPersona(persona lista[MAXPERSONAS], int tam, int mesCumple){
 	for(i=0;i<tam;i++){
 		if(lista[i].mesCumple==mesCumple){
 			mostrarPersona(lista[i]);
-			/*strcpy(p->nombre,lista[i].nombre);
-			p->peso=lista[i].peso;
-			p->altura=lista[i].altura;*/
 		}
 	}
 }

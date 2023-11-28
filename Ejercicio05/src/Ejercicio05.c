@@ -20,16 +20,17 @@ int main(void) {
 	int opciones;
 	int edadIni,edadFin;
 	char inicial;
-
+	char enter;
 
 	for(i=0;i<MAXCONTACTOS;i++){
 		c=Contacto();
 		num=insertarContacto(lista,num,c);
-		if(strlen(c.nombre)==0){
+		if(strlen(lista[i].nombre)==0){
 			num--;
 			break;
 		}
 	}
+
 
 	do{
 		puts("1. Mostrar la lista de todos los nombres.");
