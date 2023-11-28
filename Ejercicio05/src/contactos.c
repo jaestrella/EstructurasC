@@ -44,7 +44,6 @@ int insertarContacto(contacto lista[MAXCONTACTOS], int tam, contacto c){
 	if(tam>=MAXCONTACTOS){
 		return tam;
 	}
-
 	lista[tam]=c;
 	tam++;
 	return tam;
@@ -69,6 +68,15 @@ void filtrarEdad(contacto lista[MAXCONTACTOS], int tam, int edadIni, int edadFin
 	for(i=0;i<tam;i++){
 		if(lista[i].edad>=edadIni && lista[i].edad<=edadFin){
 			mostrarContacto(lista[i]);
+		}
+	}
+}
+
+void buscarInicial(contacto lista[MAXCONTACTOS], int tam, char letra){
+	int i;
+	for(i=0;i<tam;i++){
+		if(lista[i].nombre[0]==letra){
+			printf("\nNombre:%s\n",lista[i].nombre);
 		}
 	}
 }

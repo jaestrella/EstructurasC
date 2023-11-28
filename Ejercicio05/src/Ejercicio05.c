@@ -11,6 +11,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "contactos.h"
+#include <string.h>
 int main(void) {
 	contacto c;
 	contacto lista[MAXCONTACTOS];
@@ -18,11 +19,18 @@ int main(void) {
 	int i;
 	int opciones;
 	int edadIni,edadFin;
+	char inicial;
+
 
 	for(i=0;i<MAXCONTACTOS;i++){
 		c=Contacto();
 		num=insertarContacto(lista,num,c);
+		if(strlen(c.nombre)==0){
+			num--;
+			break;
+		}
 	}
+
 	do{
 		puts("1. Mostrar la lista de todos los nombres.");
 		puts("2. Mostrar las personas de una cierta edad.");
@@ -41,6 +49,13 @@ int main(void) {
 			fflush(stdout);
 			scanf("%d %d",&edadIni,&edadFin);
 			filtrarEdad(lista,num,edadIni,edadFin);
+			break;
+		case 3:
+			puts("Introduce la inicial a buscar.");
+			fflush(stdin);
+			fflush(stdout);
+			scanf("%c",&inicial);
+			buscarInicial(lista,num,inicial);
 			break;
 		}
 	}while(opciones!=0);
