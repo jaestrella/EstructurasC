@@ -20,7 +20,6 @@ int main(void) {
 	int opciones;
 	int edadIni,edadFin;
 	char inicial;
-	char enter;
 
 	for(i=0;i<MAXCONTACTOS;i++){
 		c=Contacto();
